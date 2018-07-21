@@ -15,3 +15,6 @@
         %td= products.carbohydrates
         %td= products.protein
         %td= products.fat
+
+- if user_signed_in?
+  = link_to 'Add product', new_product_path, class: 'button'

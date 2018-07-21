@@ -1,4 +1,16 @@
-- @recipes.each do |recipe|
-  = recipe.name
-  = recipe.preparation_time
-  = recipe.difficulty
+%h1 Recipes:
+
+%table{:border => 1}
+  %tbody
+    %tr
+      %th Name
+      %th Preparation time
+      %th Difficulty
+    - @recipes.each do |recipe|
+      %tr
+        %td= recipe.name
+        %td= recipe.preparation_time
+        %td= recipe.difficulty
+
+- if user_signed_in?
+  = link_to 'Add recipe', new_recipe_path, class: 'button'
