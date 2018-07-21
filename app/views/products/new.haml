@@ -1,8 +1,6 @@
-<<<<<<< Updated upstream
-= render 'form', product: @product
 
 = link_to 'Back', products_path
-=======
+%hr
 %h1 Add new product
 
 = simple_form_for @product do |f|
@@ -16,4 +14,3 @@
 	= f.input :protein, input_html: { id: 'protein-input' }
 	= f.input :fat, input_html: { id: 'fat-input' }
 	= f.button :submit, class: 'btn btn-success'
->>>>>>> Stashed changes
