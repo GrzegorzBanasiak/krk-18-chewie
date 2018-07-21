@@ -4,7 +4,17 @@
 
 %h1= 'Add products'
 
-= simple_form_for :product, :url => add_products_recipe_path, method: :post, html: { class: 'add_product' }, wrapper: :horizontal_form do |form|
-  = form.input :name, collection: ['sol', 'pieprz']
-  = form.input :weight
-  = form.button :submit, class: 'btn btn-success'
+
+= simple_form_for :product, :url => add_products_recipe_path, method: :post, class: 'table-striped' do |form|
+  %table
+    %tr
+      %td Name
+      %td Weight
+      %td
+    %tr
+      %td
+        = form.input :name, collection: ['sol', 'pieprz'], label: false
+      %td
+        = form.input :weight, label: false
+      %td
+        = form.button :submit, class: 'btn btn-success'
