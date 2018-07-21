@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   private
 
   def set_recipe
-    @recipe = REcipe.find(params[:id])
+    @recipe = Recipe.find(params[:id])
   end
 
   def recipe_params
