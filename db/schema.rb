@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_21_101256) do
+ActiveRecord::Schema.define(version: 2018_07_21_111305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "products", force: :cascade do |t|
-    t.integer "calories"
-    t.integer "carbohydrates"
-    t.integer "protein"
-    t.integer "fat"
+    t.float "calories"
+    t.float "carbohydrates"
+    t.float "protein"
+    t.float "fat"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
