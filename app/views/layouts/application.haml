@@ -8,7 +8,9 @@
   %body
     %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       .container
-        .navbar-brand Lodówka Makłowicza
+        = link_to root_path do
+          .navbar-brand 
+            Lodówka Makłowicza
         .collapse.navbar-collapse{:id => "exCollapsingNavbar"}
           %ul.nav.navbar-nav
             %li.nav-item
