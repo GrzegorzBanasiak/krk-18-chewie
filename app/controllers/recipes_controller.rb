@@ -1,10 +1,7 @@
 class RecipesController < ApplicationController
+  before_action :set_recipe
 
-  def index
-  end
 
-  def show
-  end
 
   private
 
