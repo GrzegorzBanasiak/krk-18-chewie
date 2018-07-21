@@ -1,0 +1,10 @@
+%h1= @recipe.name
+
+= render 'form', recipe: @recipe
+
+%h1= 'Add products'
+
+= simple_form_for :product, :url => add_products_recipe_path, method: :post, html: { class: 'add_product' }, wrapper: :horizontal_form do |form|
+  = form.input :name, collection: ['sol', 'pieprz']
+  = form.input :weight
+  = form.button :submit, class: 'btn btn-success'
