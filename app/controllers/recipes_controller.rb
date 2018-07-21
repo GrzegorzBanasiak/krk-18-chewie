@@ -1,13 +1,35 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe
 
+  def index
+    @recipes = Recipe.all
+  end
+  
+  def new
+    @recipe = Recipe.new
+  end
 
+  def create
+    @recipe = Recipe.new(recipe_params)
+    if @recipe.save
+      redirect_to @recipe, notice: 'Przepis dodany'
+    else
+      render 'new'
+    end
+  end
 
-  private
-
-  def set_recipe
+  def show
     @recipe = Recipe.find(params[:id])
   end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+  end
+
+  private
 
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :difficulty)
