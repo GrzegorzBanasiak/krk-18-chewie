@@ -1,3 +1,19 @@
+<<<<<<< Updated upstream
 = render 'form', product: @product
 
 = link_to 'Back', products_path
+=======
+%h1 Add new product
+
+= simple_form_for @product do |f|
+	= f.input :name, input_html: { id: 'food-name-input' }
+	%a{ class: 'btn btn-primary', id: 'btn-get-food'} Find Food
+	.foods
+		%ul{:id => "list-food", :class => "list-group"}
+
+	= f.input :calories, input_html: { id: 'calories-input' }
+	= f.input :carbohydrates, input_html: { id: 'carbo-input' }
+	= f.input :protein, input_html: { id: 'protein-input' }
+	= f.input :fat, input_html: { id: 'fat-input' }
+	= f.button :submit, class: 'btn btn-success'
+>>>>>>> Stashed changes

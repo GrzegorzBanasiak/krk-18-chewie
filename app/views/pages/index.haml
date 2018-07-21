@@ -1,2 +1,12 @@
 %h1 Hello World
 %p pages#root
+
+%div
+  %input{:type => "text", :id => "food-name-input"}
+  %br
+  %br
+  %button{:class => "btn btn-primary", :id => "btn-get-food"} Find Food
+
+
+.foods
+  %ul{:id => "list-food"}
