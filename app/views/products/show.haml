@@ -1,6 +1,17 @@
 %h1 Product
-= @product.name
-= @product.calories
-= @product.carbohydrates
-= @product.protein
-= @product.fat
+
+%table{:border => 1}
+  %tbody
+    %tr
+      %th Name
+      %th Calories
+      %th Carbohydrates
+      %th Protein
+      %th Fat
+
+      %tr
+        %td= @product.name
+        %td= @product.calories
+        %td= @product.carbohydrates
+        %td= @product.protein
+        %td= @product.fat

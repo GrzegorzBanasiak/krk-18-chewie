@@ -1,6 +1,17 @@
-= @products.each do |product|
-  = product.name
-  = product.calories
-  = product.carbohydrates
-  = product.protein
-  = product.fat
+%h1 Products:
+
+%table{:border => 1}
+  %tbody
+    %tr
+      %th Name
+      %th Calories
+      %th Carbohydrates
+      %th Protein
+      %th Fat
+    - @products.each do |products|
+      %tr
+        %td= products.name
+        %td= products.calories
+        %td= products.carbohydrates
+        %td= products.protein
+        %td= products.fat
