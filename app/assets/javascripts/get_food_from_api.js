@@ -24,13 +24,12 @@ $( document ).ready(function() {
         })
 
         var list_food = $('#list-food li').on('click', (e)=>{
+          $('.hidden-inputs').css('display', 'block');
           $($('#calories-input')[0]).val(parseFloat(e.target.dataset.calories).toFixed(2));
           $($('#carbo-input')[0]).val(parseFloat(e.target.dataset.carbohydrates).toFixed(2));
           $($('#protein-input')[0]).val(parseFloat(e.target.dataset.protein).toFixed(2));
           $($('#fat-input')[0]).val(parseFloat(e.target.dataset.fat).toFixed(2));
           $($('#food-name-input')[0]).val(e.target.dataset.name);
-
-
           list_food.remove();
         })
       },

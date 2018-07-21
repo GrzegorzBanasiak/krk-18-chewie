@@ -9,8 +9,9 @@
 	.foods
 		%ul{:id => "list-food", :class => "list-group"}
 
-	= f.input :calories, input_html: { id: 'calories-input' }
-	= f.input :carbohydrates, input_html: { id: 'carbo-input' }
-	= f.input :protein, input_html: { id: 'protein-input' }
-	= f.input :fat, input_html: { id: 'fat-input' }
-	= f.button :submit, class: 'btn btn-success'
+	.hidden-inputs
+		= f.input :calories, input_html: { id: 'calories-input' }
+		= f.input :carbohydrates, input_html: { id: 'carbo-input' }
+		= f.input :protein, input_html: { id: 'protein-input' }
+		= f.input :fat, input_html: { id: 'fat-input' }
+		= f.button :submit, class: 'btn btn-success'
