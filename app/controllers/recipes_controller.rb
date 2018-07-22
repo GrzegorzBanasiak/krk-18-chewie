@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
 
   def create
     recipe = current_user.recipes.build(recipe_params)
+    recipe.image.attach(params[:recipe][:image])
     if recipe.save
       redirect_to edit_recipe_path(recipe), notice: 'Recipe saved'
     else
@@ -57,7 +58,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :preparation_time, :difficulty)
+    params.require(:recipe).permit(:name, :preparation_time, :difficulty, :image)
   end
 
   def recipe_ingredient_params
