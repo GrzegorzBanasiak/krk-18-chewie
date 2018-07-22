@@ -1,7 +1,4 @@
-
 $( document ).ready(function() {
-
-
 
   $('#btn-get-food').on('click', (e)=>{
     let input_food_value = $('#food-name-input').val();

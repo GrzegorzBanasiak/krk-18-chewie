@@ -1,6 +1,7 @@
 %h1 Recipes
 
-= image_tag (url_for(@recipe.image))
+- if @recipe.image.attachment != nil
+  = image_tag (url_for(@recipe.image))
 
 
 %table{:border => 1}
