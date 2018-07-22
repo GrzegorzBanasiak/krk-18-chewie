@@ -10,4 +10,6 @@ class User < ApplicationRecord
     role == 'admin'
   end
 
+  has_many :products
+
 end

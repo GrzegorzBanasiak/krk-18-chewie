@@ -9,3 +9,5 @@
 
 user = User.create!(email: 'koty@o2.pl', password: "zaqwsx", password_confirmation: 'zaqwsx')
 userAdmin = User.create!(email: 'kot@o2.pl', password: "zaqwsx", password_confirmation: 'zaqwsx', role: "admin")
+
+user.products.create!(calories: 12.22, carbohydrates: 2.12, protein: 1.11, fat: 12.56, name: "Kielbasa")
