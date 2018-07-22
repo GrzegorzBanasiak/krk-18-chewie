@@ -1,15 +1,18 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :find_recipe, only: [:show, :edit, :update, :destroy]
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def index
     @recipes = Recipe.all
   end
 
   def new
-    @recipe = Recipe.new
+    @recipe = current_user.recipes.build
   end
 
   def create
-    recipe = Recipe.new(recipe_params)
+    recipe = current_user.recipes.build(recipe_params)
     if recipe.save
       redirect_to edit_recipe_path(recipe), notice: 'Recipe saved'
     else
@@ -17,15 +20,14 @@ class RecipesController < ApplicationController
     end
   end
 
-  def show
-    @recipe = Recipe.find(params[:id])
-  end
+  def show;end
 
   def edit
-    @recipe = Recipe.find(params[:id])
+    authorize @recipe
   end
 
   def update
+    authorize @recipe
     if @recipe.update(recipe_params)
       redirect_to @recipe, notice: 'Product added'
     else
@@ -34,7 +36,8 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to recipies_path
   end
 
   def add_products
@@ -49,11 +52,20 @@ class RecipesController < ApplicationController
 
   private
 
+  def find_recipe
+    @recipe = Recipe.find(params[:id])
+  end
+
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :difficulty)
   end
 
   def recipe_ingredient_params
     params.require(:recipe_ingredient).permit(:product_id, :weight)
+  end
+
+  def user_not_authorized
+    flash[:alert] = "You are not authorized to perform this action."
+    redirect_to(request.referrer || root_path)
   end
 end
