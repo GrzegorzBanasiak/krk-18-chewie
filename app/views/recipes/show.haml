@@ -1,5 +1,9 @@
 %h1 Recipes
 
+- if @recipe.image.attachment
+  = image_tag (url_for(@recipe.image))
+
+
 %table{:border => 1}
   %tbody
     %tr
