@@ -5,5 +5,4 @@ class RecipeIngredientsController < ApplicationController
     recipe_ingredient.destroy
     redirect_to edit_recipe_path(recipe_ingredient.recipe)
   end
-
 end

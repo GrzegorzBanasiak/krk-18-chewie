@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :find_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :find_recipe, only: [:show, :edit, :update, :destroy, :add_recipe_step]
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def index
@@ -47,6 +47,15 @@ class RecipesController < ApplicationController
     end
   end
 
+  def add_recipe_step
+    step = RecipeStep.new(recipe_step_params.merge(recipe_id: recipe.id))
+    if step.save
+      redirect_to edit_recipe_path(recipe)
+    else
+      redirect_to edit_recipe_path(recipe)
+    end
+  end
+
   private
 
   def find_recipe
@@ -59,6 +68,10 @@ class RecipesController < ApplicationController
 
   def recipe_ingredient_params
     params.require(:recipe_ingredient).permit(:product_id, :weight)
+  end
+
+  def recipe_step_params
+    params.require(:recipe_step).permit(:description, :recipe_id)
   end
 
   def user_not_authorized
