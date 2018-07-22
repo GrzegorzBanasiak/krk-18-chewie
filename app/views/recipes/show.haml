@@ -1,7 +1,7 @@
 %h1 Recipes
 
 - if @recipe.image.attachment
-  = image_tag (url_for(@recipe.image))
+  = image_tag (url_for(@recipe.image)), class: 'img-thumbnail img-products'
 
 
 %table{:border => 1}
@@ -25,7 +25,7 @@
       %th Carbohydrates
       %th Protein
       %th Fat
-     
+
       %tr
         %td= @recipe.calories
         %td= @recipe.carbohydrates
