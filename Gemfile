@@ -6,6 +6,7 @@ ruby '2.5.1'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap'
 gem 'devise'
+gem 'ratyrate'
 gem 'haml'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'

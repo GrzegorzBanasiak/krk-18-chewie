@@ -3,7 +3,7 @@
 class ProductPolicy
   attr_reader :user, :product
 
-  def initializer(user, product)
+  def initialize(user, product)
     @user = user
     @product = product
   end

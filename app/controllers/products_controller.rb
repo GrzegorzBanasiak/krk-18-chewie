@@ -3,6 +3,7 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :find_product, only: [:edit, :show, :update, :delete]
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def index
     @products = Product.all
@@ -48,5 +49,10 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :calories, :carbohydrates, :protein, :fat)
+  end
+
+  def user_not_authorized
+    flash[:alert] = 'You are not authorized to perform this action.'
+    redirect_to(request.referer || root_path)
   end
 end
