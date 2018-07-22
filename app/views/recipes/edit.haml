@@ -17,7 +17,7 @@
         %td= ri.product.name
         %td= ri.weight
   %tr
-    = simple_form_for :recipe_ingredient, :url => add_products_recipe_path, method: :post, class: 'table-striped' do |form|
+    = simple_form_for :recipe_ingredient, url: add_products_recipe_path, method: :post, class: 'table-striped' do |form|
       %td
         = form.input :product_id, collection: Product.all.map { |p| [p.id, p.to_s]},label_method: :second, value_method: :first, label: false
       %td

@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'simple_form'
 gem 'devise'
+gem 'ratyrate'
 gem 'pundit'
 
 group :development, :test do

@@ -6,13 +6,16 @@
       %th Name
       %th Preparation time
       %th Difficulty
-     
+
       %tr
         %td= @recipe.name
         %td= @recipe.preparation_time
         %td= @recipe.difficulty
-        
+
 = link_to 'Back', recipes_path
 
 = link_to 'Edit', edit_recipe_path(@recipe)
 
+%br
+Rate :
+= rating_for @recipe, 'rate', star: 5, disable_after_rate: true, enable_half: true
