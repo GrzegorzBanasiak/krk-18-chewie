@@ -2,18 +2,24 @@
 
 = render 'form', recipe: @recipe
 
-%h1= 'Add products'
+%h1= 'Products'
 
+%table
+  %tr
+    - @recipe.recipe_ingredients.each do |ri|
+      %tr
+        %td= ri.product.name
+        %td= ri.weight
 
-= simple_form_for :product, :url => add_products_recipe_path, method: :post, class: 'table-striped' do |form|
-  %table
-    %tr
-      %td Name
-      %td Weight
+  %tr
+    %td Name
+    %td Weight (grams)
+    %td
+
+  %tr
+    = simple_form_for :recipe_ingredient, :url => add_products_recipe_path, method: :post, class: 'table-striped' do |form|
       %td
-    %tr
-      %td
-        = form.input :name, collection: ['sol', 'pieprz'], label: false
+        = form.input :product_id, collection: Product.all.map { |p| [p.id, p.to_s]},label_method: :second, value_method: :first, label: false
       %td
         = form.input :weight, label: false
       %td
