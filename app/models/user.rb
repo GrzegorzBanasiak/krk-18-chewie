@@ -12,4 +12,6 @@ class User < ApplicationRecord
 
   has_many :products
 
+  ratyrate_rater
+
 end
