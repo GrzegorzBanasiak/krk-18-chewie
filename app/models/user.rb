@@ -15,6 +15,6 @@ class User < ApplicationRecord
   has_many :products
   has_many :recipes
 
-  ratyrate_rater
+  # ratyrate_rater
 
 end
