@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
   def edit
   	@product = Product.find(params[:id])
+    authorize @product
   end
 
   def create
@@ -26,6 +27,7 @@ class ProductsController < ApplicationController
 
   def update
   	@product = Product.find(params[:id])
+    authorize @product
   	if @product.update(product_params)
   		redirect_to @product
   	else
