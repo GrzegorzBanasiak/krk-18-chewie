@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ProductPolicy
   attr_reader :user, :product
 
@@ -11,5 +13,4 @@ class ProductPolicy
   end
 
   alias_method :update?, :edit?
-
 end
