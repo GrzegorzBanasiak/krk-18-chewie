@@ -1,7 +1,7 @@
 class ProductPolicy
   attr_reader :user, :product
 
-  def initializer(user, product)
+  def initialize(user, product)
     @user = user
     @product = product
   end
@@ -10,6 +10,6 @@ class ProductPolicy
     user.present? && user == product.user || user.admin?
   end
 
-  alias_method :update? :edit?
+  alias_method :update?, :edit?
 
 end

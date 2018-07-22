@@ -40,7 +40,11 @@ class RecipesController < ApplicationController
   def add_products
     recipe = Recipe.find(params[:id])
     recipe_ingredient = RecipeIngredient.new(recipe_ingredient_params.merge(recipe_id: recipe.id))
-    redirect_to edit_recipe_path(recipe)
+    if recipe_ingredient.save
+      redirect_to edit_recipe_path(recipe)
+    else
+      redirect_to edit_recipe_path(recipe)
+    end
   end
 
   private
