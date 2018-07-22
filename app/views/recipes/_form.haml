@@ -1,7 +1,7 @@
 = simple_form_for @recipe do |form|
   = form.input :name
-  = form.input :preparation_time
-  = form.input :difficulty
+  = form.input :preparation_time, label: 'Preparation time (minutes)'
+  = form.input :difficulty, placeholder: 'easy, medium, hard'
   = form.file_field :image
   %br
   %br
