@@ -32,6 +32,6 @@ class Recipe < ApplicationRecord
       rate = ingredient[:weight]/100
       amount += ingredient.product[name] * rate
     end
-    amount
+    amount.round(2)
   end
 end
