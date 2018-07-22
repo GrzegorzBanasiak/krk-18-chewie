@@ -1,4 +1,4 @@
-%h1 Recipes:
+%h1 Recipes
 
 %table{:border => 1}
   %tbody
@@ -8,9 +8,9 @@
       %th Difficulty
     - @recipes.each do |recipe|
       %tr
-        %td= recipe.name
+        %td= link_to "#{recipe.name}", recipe_path(recipe)
         %td= recipe.preparation_time
         %td= recipe.difficulty
 
 - if user_signed_in?
-  = link_to 'Add recipe', new_recipe_path, class: 'button'
+  = link_to 'Add recipe', new_recipe_path, class: 'btn btn-primary'

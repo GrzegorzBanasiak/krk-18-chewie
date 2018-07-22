@@ -1,3 +1,18 @@
-= @recipe.name
-= @recipe.preparation_time
-= @recipe.difficulty
+%h1 Recipes
+
+%table{:border => 1}
+  %tbody
+    %tr
+      %th Name
+      %th Preparation time
+      %th Difficulty
+     
+      %tr
+        %td= @recipe.name
+        %td= @recipe.preparation_time
+        %td= @recipe.difficulty
+        
+= link_to 'Back', recipes_path
+
+= link_to 'Edit', edit_recipe_path(@recipe)
+

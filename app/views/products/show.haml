@@ -15,3 +15,7 @@
         %td= @product.carbohydrates
         %td= @product.protein
         %td= @product.fat
+
+= link_to 'Back', products_path
+
+= link_to 'Edit', edit_product_path(@product)

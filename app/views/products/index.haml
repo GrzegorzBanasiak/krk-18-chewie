@@ -1,4 +1,4 @@
-%h1 Products:
+%h1 Products
 
 %table{:border => 1}
   %tbody
@@ -8,13 +8,13 @@
       %th Carbohydrates
       %th Protein
       %th Fat
-    - @products.each do |products|
+    - @products.each do |product|
       %tr
-        %td= products.name
-        %td= products.calories
-        %td= products.carbohydrates
-        %td= products.protein
-        %td= products.fat
+        %td= link_to "#{product.name}", product_path(product)
+        %td= product.calories
+        %td= product.carbohydrates
+        %td= product.protein
+        %td= product.fat
 
 - if user_signed_in?
-  = link_to 'Add product', new_product_path, class: 'button'
+  = link_to 'Add product', new_product_path, class: 'btn btn-primary'
