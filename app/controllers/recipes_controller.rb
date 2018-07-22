@@ -31,6 +31,7 @@ class RecipesController < ApplicationController
   def update
     authorize @recipe
     if @recipe.update(recipe_params)
+      @recipe.image.attach(params[:recipe][:image])
       redirect_to @recipe, notice: 'Product added'
     else
       render :edit
