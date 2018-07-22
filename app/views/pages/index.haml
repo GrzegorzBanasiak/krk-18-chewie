@@ -2,16 +2,14 @@
   .row
     .col-lg-12
       .row
-        .col-lg-12.text-center
-          %h1
-            Team Chewie
-
-      .row
         .col-lg-12
+          %br
           .jumbotron
             %h1 Make your own dish
             %p
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            = link_to ' Login ', new_user_session_path, class: 'btn btn-success'
+            = link_to ' Login ', new_user_password_path, class: 'btn btn-primary'
       .row
         .col-lg-6
           %h1
@@ -35,3 +33,9 @@
             consectetur adipiscing elit.
           %p
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Ut enim ad minim veniam, quis nostrud exercitation
+
+      .row
+        .col-lg-12.text-center
+          %h1
+            Team Chewie
+          %img{:src => "https://cdn.shopify.com/s/files/1/0267/4223/products/chewie-and-porgs-star-wars-teeturtle_800x.jpg?v=1510682141", :class => "img-chewie"}
