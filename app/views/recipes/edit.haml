@@ -6,16 +6,14 @@
 
 %table
   %tr
+    %td Name
+    %td Weight (grams)
+    %td
+  %tr
     - @recipe.recipe_ingredients.each do |ri|
       %tr
         %td= ri.product.name
         %td= ri.weight
-
-  %tr
-    %td Name
-    %td Weight (grams)
-    %td
-
   %tr
     = simple_form_for :recipe_ingredient, :url => add_products_recipe_path, method: :post, class: 'table-striped' do |form|
       %td
