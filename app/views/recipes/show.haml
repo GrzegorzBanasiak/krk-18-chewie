@@ -1,5 +1,4 @@
-%h1 Recipes
-
+%h1 Recipe
 
 - if @recipe.image.attachment
   = image_tag (url_for(@recipe.image)), class: 'img-thumbnail img-products'
@@ -30,14 +29,7 @@
       %th Carbohydrates
       %th Protein
       %th Fat
-
-
-      %tr
-        %td= @recipe.calories
-        %td= @recipe.carbohydrates
-        %td= @recipe.protein
-        %td= @recipe.fat
-
+      
   %tbody
     %tr
       %td= @recipe.calories
