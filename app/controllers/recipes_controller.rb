@@ -1,5 +1,6 @@
-class RecipesController < ApplicationController
+# frozen_string_literal: true
 
+class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
   end
@@ -39,7 +40,7 @@ class RecipesController < ApplicationController
 
   def add_products
     recipe = Recipe.find(params[:id])
-    recipe_ingredient = RecipeIngredient.new(recipe_ingredient_params.merge(recipe_id: recipe.id))
+    # recipe_ingredient = RecipeIngredient.new(recipe_ingredient_params.merge(recipe_id: recipe.id))
     redirect_to edit_recipe_path(recipe)
   end
 

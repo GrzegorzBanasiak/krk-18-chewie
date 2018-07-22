@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ProductPolicy
   attr_reader :user, :product
 
@@ -10,6 +12,5 @@ class ProductPolicy
     user.present? && user == product.user || user.admin?
   end
 
-  alias_method :update? :edit?
-
+  alias_method :update?, :edit?
 end
