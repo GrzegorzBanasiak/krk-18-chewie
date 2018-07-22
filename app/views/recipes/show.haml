@@ -12,6 +12,26 @@
         %td= @recipe.preparation_time
         %td= @recipe.difficulty
 
+<<<<<<< Updated upstream
+=======
+%h4 Nutrition
+
+%table{:border => 1}
+  %tbody
+    %tr
+      %th Calories
+      %th Carbohydrates
+      %th Protein
+      %th Fat
+     
+      %tr
+        %td= @recipe.calories
+        %td= @recipe.carbohydrates
+        %td= @recipe.protein
+        %td= @recipe.fat
+
+        
+>>>>>>> Stashed changes
 = link_to 'Back', recipes_path
 
 = link_to 'Edit', edit_recipe_path(@recipe)
