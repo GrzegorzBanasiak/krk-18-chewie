@@ -10,12 +10,12 @@
       %strong Name
     %td
       %strong Weight (grams)
-    %td
   %tr
     - @recipe.recipe_ingredients.each do |ri|
       %tr
         %td= ri.product.name
         %td= ri.weight
+        %td= button_to 'Delete', recipe_ingredient_path(ri), method: :delete, class: 'btn  btn-danger'
   %tr
     = simple_form_for :recipe_ingredient, url: add_products_recipe_path, method: :post, class: 'table-striped' do |form|
       %td

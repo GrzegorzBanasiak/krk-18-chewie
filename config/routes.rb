@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     post 'add_products', on: :member
   end
 
-  resources :products
+  resources :products, :recipe_ingredients
 end

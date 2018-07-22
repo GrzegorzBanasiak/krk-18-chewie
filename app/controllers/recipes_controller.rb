@@ -37,8 +37,14 @@ class RecipesController < ApplicationController
   end
 
   def destroy
+<<<<<<< Updated upstream
     @recipe.destroy
     redirect_to recipies_path
+=======
+    recipe = Recipe.find(params[:id])
+    recipe.destroy
+    redirect_to edit_recipe_path(recipe)
+>>>>>>> Stashed changes
   end
 
   def add_products
