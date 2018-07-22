@@ -1,36 +1,50 @@
 %h1 Recipes
 
+<<<<<<< Updated upstream
 - if @recipe.image.attachment
   = image_tag (url_for(@recipe.image)), class: 'img-thumbnail img-products'
 
 
 %table{:border => 1}
   %tbody
+=======
+%table{:class => "table table-hover", :border => 1}
+  %thead{:class => "thead-dark"}
+>>>>>>> Stashed changes
     %tr
       %th Name
       %th Preparation time
       %th Difficulty
-
-      %tr
-        %td= @recipe.name
-        %td= @recipe.preparation_time
-        %td= @recipe.difficulty
+  %tbody
+    %tr
+      %td= @recipe.name
+      %td= @recipe.preparation_time
+      %td= @recipe.difficulty
 
 %h4 Nutrition
 
-%table{:border => 1}
-  %tbody
+%table{:class => "table table-hover", :border => 1}
+  %thead{:class => "thead-dark"}
     %tr
       %th Calories
       %th Carbohydrates
       %th Protein
       %th Fat
+<<<<<<< Updated upstream
 
       %tr
         %td= @recipe.calories
         %td= @recipe.carbohydrates
         %td= @recipe.protein
         %td= @recipe.fat
+=======
+  %tbody
+    %tr
+      %td= @recipe.calories
+      %td= @recipe.carbohydrates
+      %td= @recipe.protein
+      %td= @recipe.fat
+>>>>>>> Stashed changes
 
 = link_to 'Back', recipes_path
 
