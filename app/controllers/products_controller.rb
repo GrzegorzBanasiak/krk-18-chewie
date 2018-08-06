@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
     if product.save
       redirect_to product
     else
+      @product = product
       render :new
     end
   end
