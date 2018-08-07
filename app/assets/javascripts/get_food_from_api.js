@@ -15,6 +15,8 @@ $( document ).ready(function() {
         }
 
         var filteredFoods = resultsFoods.filter(isAllParams);
+        console.log(filteredFoods);
+
 
         if (filteredFoods == 0) {
           alert("We didn't find :(, write your own products");

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:show]
   before_action :find_product, only: [:edit, :show, :update, :delete]
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def index
-    @products = Product.all
+    @products = current_user.products.all
   end
 
   def new

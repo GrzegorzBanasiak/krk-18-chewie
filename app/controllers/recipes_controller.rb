@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:show]
   before_action :find_recipe, only: [:show, :edit, :update, :destroy]
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def index
-    @recipes = Recipe.all
+    @recipes = current_user.recipes.all
   end
 
   def new
