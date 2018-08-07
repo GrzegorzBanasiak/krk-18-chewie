@@ -2,7 +2,13 @@
   = form.input :name
   = form.input :preparation_time, label: 'Preparation time (minutes)'
   = form.input :difficulty, placeholder: 'easy, medium, hard'
+  %br
   = form.file_field :image
+  %br
+  %br
+  %p
+    I want to Recipe to be public:
+    = form.check_box :public
   %br
   %br
   = form.button :submit, class: 'btn btn-success'
