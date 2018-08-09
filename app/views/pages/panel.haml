@@ -1,0 +1,14 @@
+%h1
+  pages/panel
+
+%div
+  %div
+    %h4
+      Products:
+    = link_to 'All your products', products_path, class: 'btn btn-primary'
+    = link_to 'Add new procuts to list', new_product_path, class: 'btn btn-success'
+  %div
+    %h4
+      Recipes
+    = link_to 'See your recipes', recipes_path, class: 'btn btn-primary'
+    = link_to 'Add new recipes to list', new_recipe_path, class: 'btn btn-success'
